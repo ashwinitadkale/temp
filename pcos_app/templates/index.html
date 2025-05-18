@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PCOS/PCOD Prediction</title>
+</head>
+<body>
+    <h2>Enter Your Details</h2>
+    <form action="/predict" method="post">
+        {% for feature in feature_names %}
+            <label for="{{ feature }}">{{ feature.replace('_', ' ') }}:</label><br>
+            <input type="text" id="{{ feature }}" name="{{ feature }}" required><br><br>
+        {% endfor %}
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
